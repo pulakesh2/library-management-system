@@ -14,8 +14,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
 import ProtectedRoute from "./ui/ProtectedRoute";
-import Dashboard from "./page/Dashboard";
-// supabase password :  9J58PsnJw26tWuEM
+
+
 
 function App() {
   const queryClient = new QueryClient({
@@ -39,8 +39,7 @@ function App() {
               </ProtectedRoute>
             }
           >
-            <Route index element={<Navigate replace to="dashboard" />} />
-            <Route path="dashboard" element={<Dashboard />} />
+            <Route index element={<Navigate replace to="books" />} />
             <Route path="books" element={<Book />} />
             <Route path="account" element={<Account />} />
             <Route path="books/:bookid" element={<BookDetails />} />
